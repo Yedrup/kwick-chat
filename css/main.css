@@ -1,0 +1,96 @@
+body {
+    background-color: rgb(54, 54, 53);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.subtitle,
+.title {
+    color: #FFF; 
+}
+
+.title {
+    font-size: 2rem;
+
+}
+.subtitle {
+    font-size: 1.5rem;
+}
+
+.c-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+    height: 2rem;
+    width: 15rem;
+    margin-bottom: 1rem;
+}
+
+  input::-webkit-input-placeholder {
+      text-align: center;
+      font-size: 1rem;
+  }
+  input::-moz-placeholder {
+      text-align: center;
+      font-size: 1rem;
+  }
+  input:-ms-input-placeholder {
+      text-align: center;
+      font-size: 1rem;
+  }
+  input:-moz-placeholder {
+      text-align: center;
+      font-size: 1rem;
+  }
+
+
+.c-button-submit {
+  display: inline-block;
+  width: 9rem;
+  height: 4rem;
+}
+
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 15rem;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+}
+.tabs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tabs li a {
+  display: block;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+.tabs li a:hover {
+  background: #179b77;
+  color: #ffffff;
+}
+.tabs .active a {
+  background: #1ab188;
+  color: #ffffff;
+}
+
+.tab-content > div:last-child {
+  display: none;
+}

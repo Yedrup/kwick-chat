@@ -1,51 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app= "chatApp">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta description="Kwick is a secure chat">
-	<title>Kwick AngularJS</title>
+	<meta description="Kwick is the easy & free way to chat with your classmates!">
+	<title>Kwick</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
-<body ng-app= "chat">
-	<h2 class="title">Welcome to Kwick!</h2>
-	<div class="forms">
-		<ul class="tabs">
-        	<li class="tab active"><a href="#signup">Sign Up</a></li>
-       		<li class="tab"><a href="#login">Log In</a></li>
-      	</ul>
-      	<!-- Subscrition -->
-		<form id="Login" class="c-form" action="">
-			<p class="subtitle">Kwick subscription</p>
-          <div class="c-field">
-            <input placeholder="Set a pseudo" class="c-input" type="text"></input>
-          </div>
-          <div class="c-field">
-            <label class="c-label">
-              <input type="password" placeholder="Set a password" class="c-input" value="" />
-            </label>
-          </div>              
-          <div class="c-field">
-            <input type="submit" class="c-button-submit" value="Welcome!"/>
-          </div>  
-    	</form>
-    	<!-- LOGIN -->
-		<form id="Login" class="c-form" action="">
-			<p class="subtitle">Kwick Login</p>
-          <div class="c-field">
-            <input placeholder="Your pseudo" class="c-input" type="text"></input>
-          </div>
-          <div class="c-field">
-            <label class="c-label">
-              <input type="password" placeholder="Your password" class="c-input" value="" />
-            </label>
-          </div>              
-          <div class="c-field">
-            <input type="submit" class="c-button-submit" value="Welcome back!"/>
-          </div>  
-    	</form>    	
-	</div>
+<body ng-controller="chatCtrl as chat">
+	<main class="c-main">
+		<h2 class="c-title">Kwick chat!</h2>
+		<p class="c-presentation">Kwick is the easy & free way to chat with your classmates!</p>
+		<div class="c-forms" connection-forms></div>
+		<section class="c-chat">
+			<ul class="c-messages">
+			    <li ng-repeat="message in chat.messages"> 
+			    <span class="c-user-name">{{message.name}}</span> : <span class="c-user-message">{{message.text}}</span></li>
+			</ul>
+		</section>
+	</main>
 	<script src="node_modules/angular/angular.js"></script>
 	<script src="js/main.js"></script>
 </body>

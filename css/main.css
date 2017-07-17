@@ -1,96 +1,168 @@
+/*GENERAL*/
+@import url('https://fonts.googleapis.com/css?family=Ubuntu, Droid+Sans');
+
+body,
+html {
+  font-size: 14px;
+  font-family: 'Droid Sans', sans-serif;
+}
+
 body {
-    background-color: rgb(54, 54, 53);
+    background-color: rgb(50, 50, 52);
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 100%;
+}
+.c-main {
+  margin: 2rem 0;
+  min-width: 90%;
+  min-height: 30rem;
+  background-color: #424242;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.subtitle,
-.title {
-    color: #FFF; 
+.c-title {
+  margin-bottom: 0;
+  font-family: Ubuntu, sans-serif;
+  color: rgb(150, 200, 150); 
+  text-shadow: 1px 1px  #383838;
+  font-size: 2rem;
 }
 
-.title {
-    font-size: 2rem;
-
+.c-presentation {
+  color: rgb(150, 200, 150); 
+  font-size: 1.20rem;
+  text-align: center;
 }
-.subtitle {
-    font-size: 1.5rem;
+
+
+/*FORMS*/
+
+.c-forms {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 80%;
+  margin-top: 0;
 }
 
 .c-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-input {
-    height: 2rem;
-    width: 15rem;
-    margin-bottom: 1rem;
-}
-
-  input::-webkit-input-placeholder {
-      text-align: center;
-      font-size: 1rem;
-  }
-  input::-moz-placeholder {
-      text-align: center;
-      font-size: 1rem;
-  }
-  input:-ms-input-placeholder {
-      text-align: center;
-      font-size: 1rem;
-  }
-  input:-moz-placeholder {
-      text-align: center;
-      font-size: 1rem;
-  }
-
-
-.c-button-submit {
-  display: inline-block;
-  width: 9rem;
-  height: 4rem;
+  width: 100%;
+  margin: 2rem;
+  border: 1px solid #404040;
+  box-shadow: 0 4px 8px 0 #393939, 0 6px 20px 0 #393939;
+  border-radius: 3px;
 }
 
 
-.tabs {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  width: 15rem;
-  padding: 0;
-  margin: 0 0 2.5rem 0;
-}
-.tabs:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.tabs li a {
+.c-users-connection {
   display: block;
+  width: 100%;
+  padding: .5rem 1px;
+  margin-top: 0;
+  border-radius: 2px;
+  background: rgb(50, 50, 50);
   white-space: nowrap;
-  text-decoration: none;
-  padding: 15px;
-  background: rgba(160, 179, 176, 0.25);
-  color: #a0b3b0;
-  font-size: 20px;
-  float: left;
+  font-size: 1.6rem;
+  color: rgb(150, 200, 150);
+  text-shadow: 2px 2px  rgb(40, 40, 40);
   text-align: center;
   cursor: pointer;
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
-.tabs li a:hover {
-  background: #179b77;
-  color: #ffffff;
-}
-.tabs .active a {
-  background: #1ab188;
-  color: #ffffff;
+
+input {
+  height: 2rem;
+  width: 15rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
 }
 
-.tab-content > div:last-child {
-  display: none;
+  input::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 1.15rem;
+    color: rgb(180,180,180);
+    font-weight: normal;
+  }
+  input::-moz-placeholder {
+    text-align: center;
+    font-size: 1.15rem;
+    color: rgb(180,180,180);
+    font-weight: normal;
+  }
+  input:-ms-input-placeholder {
+    text-align: center;
+    font-size: 1.15rem;
+    color: rgb(180,180,180);
+    font-weight: normal;
+  }
+  input:-moz-placeholder {
+    text-align: center;
+    font-size: 1.15rem;
+    color: rgb(180,180,180);
+    font-weight: normal;
+  }
+.c-button-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 3rem;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: normal;
+  white-space: pre-wrap;
+}
+
+/*Chat*/
+
+.c-chat {
+  width: 100%;
+  height: auto;
+  background-color: grey;
+  color: black;
+}
+.c-messages {
+  list-style: none;
+}
+.c-user-name {
+  font-size: 1.5rem;
+  color: rgb(150, 200, 150); 
+}
+
+.c-user-message {
+  font-size: 1.5rem; 
+}
+
+/*RESPONSIVE*/
+
+@media screen and (min-width: 768px)  {
+  body,
+  html {
+  font-size: 16px;
+  }
+  .c-forms {
+    margin-top: 2rem;
+
+  }
+  .c-form {
+    width: 40%;
+    margin: 0;
+}
+@media screen and (min-width: 1024px) {
+  
+  }
+
 }

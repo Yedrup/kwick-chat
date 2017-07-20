@@ -1,12 +1,14 @@
 <ul class="messages">
-	<li ng-repeat="message in chat.messages">
+	<li ng-repeat="message in chat.listMessages">
 		<span class="user-name">{{message.user_name}}</span> : <span class="user-message">{{message.content}}</span>
+		<br>
+ 		<span class="date">{{message.date}}</span>
 	</li>
 </ul>
 
-
-<div class="well">
-	<p ng-repeat="message in chat.listMessages">
-		{{message.user_name}} à écrit : {{message.content}} 
-	</p>
-</div>
+<!-- <div class="">
+	<form ng-submit="" id="">
+		<input type="text" class="" ng-model="" placeholder="Enter your message">
+		<input class="btn send" type="submit"></input>
+	</form>
+</div> -->

@@ -136,6 +136,7 @@ input {
 
 .chat {
   width: 100%;
+  min-height: 20rem;
   height: auto;
   background-color: grey;
   color: black;

@@ -11,9 +11,9 @@
 	<body >
 		<main class="main">
 			<h2 class="title">Kwick chat!</h2>
-			<p class="presentation">Kwick is the easy & free way to chat with your classmates!</p>
-			<div class="forms" ng-controller="userInfoCtrl as user" connection-forms ng-hide="isUserConnected"></div>
-			<div class="chat" ng-controller="chatCtrl as chat" chat-feed ng-show="isUserConnected"></div>
+			<p class="presentation" ng-hide="isUserConnected" >Kwick is the easy way to chat with all your classmates!</p>
+			<connection-forms class="forms" ng-hide="isUserConnected"></connection-forms>
+			<chat-feed class="chat" ng-show="isUserConnected"></chat-feed>
 		</main>
 		<script src="node_modules/angular/angular.js"></script>
 		<script src="js/main.js"></script>

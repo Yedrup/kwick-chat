@@ -2,15 +2,15 @@
 <form name="signup" class="form" ng-submit="user.signup()" novalidate>
 	<p class="users-connection">Sign Up</p>
 	<label class="label"> Username
-		<input placeholder="Set an username" class="input" type="text" name="username" ng-model="user.formInfo.Name" required></input>
+		<input placeholder="Set an username" class="input" type="text" name="username" ng-model="user.signupInfo.Name" required></input>
 	</label>
 	<label class="label" for="password" >Password
-		<input type="password" placeholder="Set a password" class="input" ng-model="user.formInfo.Password" required></input>
+		<input type="password" placeholder="Set a password" class="input" ng-model="user.signupInfo.Password" required></input>
 	</label>
 	<input type="submit" class="button-submit" value="Welcome!"/>
 </form>
 <!-- LOGIN -->
-<form name="LogIn" class="form"  ng-submit="user.login()" novalidate>
+<form name="Login" class="form"  ng-submit="user.login()" novalidate>
 	<p class="users-connection">Log In</p>
 	<label class="label">Username
 		<input placeholder="Your username" class="input" type="text" name="username" ng-model="user.loginInfo.Name" required></input>

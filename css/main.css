@@ -1,10 +1,10 @@
 /*GENERAL*/
-@import url('https://fonts.googleapis.com/css?family=Ubuntu, Droid+Sans');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 body,
 html {
   font-size: 14px;
-  font-family: 'Droid Sans', sans-serif;
+  font-family: 'arial', sans-serif;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     height: 100%;
 }
-.c-main {
+.main {
   margin: 2rem 0;
   min-width: 90%;
   min-height: 30rem;
@@ -24,7 +24,7 @@ body {
   align-items: center;
 }
 
-.c-title {
+.title {
   margin-bottom: 0;
   font-family: Ubuntu, sans-serif;
   color: rgb(150, 200, 150); 
@@ -32,7 +32,7 @@ body {
   font-size: 2rem;
 }
 
-.c-presentation {
+.presentation {
   color: rgb(150, 200, 150); 
   font-size: 1.20rem;
   text-align: center;
@@ -41,7 +41,7 @@ body {
 
 /*FORMS*/
 
-.c-forms {
+.forms {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -50,7 +50,7 @@ body {
   margin-top: 0;
 }
 
-.c-form {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,8 +61,13 @@ body {
   border-radius: 3px;
 }
 
+.label {
+  display: flex;
+  flex-direction: column;
+  color: #DDD;
+}
 
-.c-users-connection {
+.users-connection {
   display: block;
   width: 100%;
   padding: .5rem 1px;
@@ -114,7 +119,8 @@ input {
     color: rgb(180,180,180);
     font-weight: normal;
   }
-.c-button-submit {
+
+.button-submit {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,21 +134,21 @@ input {
 
 /*Chat*/
 
-.c-chat {
+.chat {
   width: 100%;
   height: auto;
   background-color: grey;
   color: black;
 }
-.c-messages {
+.messages {
   list-style: none;
 }
-.c-user-name {
+.user-name {
   font-size: 1.5rem;
   color: rgb(150, 200, 150); 
 }
 
-.c-user-message {
+.user-message {
   font-size: 1.5rem; 
 }
 
@@ -153,13 +159,13 @@ input {
   html {
   font-size: 16px;
   }
-  .c-forms {
+  .forms {
     margin-top: 2rem;
 
   }
-  .c-form {
+  .form {
     width: 40%;
-    margin: 0;
+    margin: 2rem 0;
 }
 @media screen and (min-width: 1024px) {
   

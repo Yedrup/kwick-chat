@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" ng-app= "chatApp">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta description="Kwick is the easy & free way to chat with your classmates!">
-	<title>Kwick</title>
-	<link rel="stylesheet" href="css/main.css">
-</head>
-<body ng-controller="chatCtrl as chat">
-	<main class="c-main">
-		<h2 class="c-title">Kwick chat!</h2>
-		<p class="c-presentation">Kwick is the easy & free way to chat with your classmates!</p>
-		<div class="c-forms" connection-forms></div>
-		<section class="c-chat">
-			<ul class="c-messages">
-			    <li ng-repeat="message in chat.messages"> 
-			    <span class="c-user-name">{{message.name}}</span> : <span class="c-user-message">{{message.text}}</span></li>
-			</ul>
-		</section>
-	</main>
-	<script src="node_modules/angular/angular.js"></script>
-	<script src="js/main.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta description="Kwick is the easy & free way to chat with your classmates!">
+		<title>Kwick</title>
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body >
+		<main class="main">
+			<h2 class="title">Kwick chat!</h2>
+			<p class="presentation">Kwick is the easy & free way to chat with your classmates!</p>
+			<div class="forms" ng-controller="userInfoCtrl as user" connection-forms ng-hide="isUserConnected"></div>
+			<div class="chat" ng-controller="chatCtrl as chat" chat-feed ng-show="isUserConnected"></div>
+		</main>
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="js/main.js"></script>
+	</body>
 </html>
-

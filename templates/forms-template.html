@@ -1,22 +1,22 @@
-
-	<form id="Login" class="c-form" action="">
-		<p class="c-users-connection">Sign Up</p>
-		<label class="c-label">
-	    	<input placeholder="Set a pseudo" class="c-input" type="text"></input>
-	    </label>
-	    <label class="c-label">
-	     	<input type="password" placeholder="Set a password" class="c-input" value="" />
-	    </label>            
-	    <input type="submit" class="c-button-submit" value="Welcome!"/>
-	</form>
-	<!-- LOGIN -->
-	<form id="Login" class="c-form" action="">
-		<p class="c-users-connection">Log In</p>
-		<label>
-	    	<input placeholder="Your pseudo" class="c-input" type="text"></input>
-	    </label>
-	    <label class="c-label">
-	      <input type="password" placeholder="Your password" class="c-input" value="" />
-	    </label>
-	    <input type="submit" class="c-button-submit" value="Welcome back!"/>
-	</form>    	
+<!-- SIGN UP -->
+<form name="signup" class="form" ng-submit="user.signup()" novalidate>
+	<p class="users-connection">Sign Up</p>
+	<label class="label"> Username
+		<input placeholder="Set an username" class="input" type="text" name="username" ng-model="user.formInfo.Name" required></input>
+	</label>
+	<label class="label" for="password" >Password
+		<input type="password" placeholder="Set a password" class="input" ng-model="user.formInfo.Password" required></input>
+	</label>
+	<input type="submit" class="button-submit" value="Welcome!"/>
+</form>
+<!-- LOGIN -->
+<form name="LogIn" class="form"  ng-submit="user.login()" novalidate>
+	<p class="users-connection">Log In</p>
+	<label class="label">Username
+		<input placeholder="Your username" class="input" type="text" name="username" ng-model="user.loginInfo.Name" required></input>
+	</label>
+	<label class="label" for="password" >Password
+		<input type="password" placeholder="Your password" class="input" name="password" ng-model="user.loginInfo.Password"  required></input>
+	</label>
+	<input type="submit" class="button-submit" value="Welcome back!"/>
+</form>

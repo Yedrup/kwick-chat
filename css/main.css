@@ -1,20 +1,24 @@
 /*GENERAL*/
+
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 a {
-  color: #424242;
+    color: #424242;
 }
+
 body,
 html {
-  font-size: 14px;
-  font-family: 'arial', sans-serif;
+    font-size: 14px;
+    font-family: 'arial', sans-serif;
 }
-html {
-  height: 100%;
 
+html {
+    height: 100%;
 }
+
 body {
     display: flex;
     align-items: center;
@@ -23,290 +27,333 @@ body {
     min-height: 100vh;
     background-color: rgb(50, 50, 52);
 }
-.header {
-  background-color: rgb(150, 200, 150); 
-}
+
 
 .footer {
-  display: flex;
-  justify-content: center;
-  max-height: 5rem;
-  width: 100%;
-  background-color: rgb(150, 200, 150); 
+    display: flex;
+    justify-content: center;
+    max-height: 5rem;
+    width: 100%;
+    background-color: rgb(150, 200, 150);
 }
 
 .main {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 30rem;
-  background-color: #424242;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 30rem;
+    background-color: #424242;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 }
 
 .title {
-  margin-bottom: 0;
-  font-family: Ubuntu, sans-serif;
-  color: rgb(150, 200, 150); 
-  text-shadow: 1px 1px  #383838;
-  font-size: 2rem;
+    margin-bottom: 0;
+    font-family: Ubuntu, sans-serif;
+    color: rgb(150, 200, 150);
+    text-shadow: 1px 1px #383838;
+    font-size: 2rem;
 }
 
 .presentation {
-  color: rgb(150, 200, 150); 
-  font-size: 1.20rem;
-  text-align: center;
+    color: rgb(150, 200, 150);
+    font-size: 1.20rem;
+    text-align: center;
 }
+
+
 
 
 /*FORMS*/
 
 .forms {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-width: 100%;
-  min-width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 100%;
+    min-width: 80%;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 1rem;
-  width: 100%;
-  margin: 2rem;
-  border: 1px solid #404040;
-  box-shadow: 0 4px 8px 0 #393939, 0 6px 20px 0 #393939;
-  border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+    width: 100%;
+    margin: 2rem;
+    border: 1px solid #404040;
+    box-shadow: 0 4px 8px 0 #393939, 0 6px 20px 0 #393939;
+    border-radius: 3px;
 }
 
 .label {
-  display: flex;
-  flex-direction: column;
-  color: #DDD;
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    color: #DDD;
 }
 
 .users-connection {
-  display: block;
-  width: 100%;
-  padding: .5rem 1px;
-  margin-top: 0;
-  border-radius: 2px;
-  background: rgb(50, 50, 50);
-  white-space: nowrap;
-  font-size: 1.6rem;
-  color: rgb(150, 200, 150);
-  text-shadow: 2px 2px  rgb(40, 40, 40);
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+    display: block;
+    width: 100%;
+    padding: .5rem 1px;
+    margin-top: 0;
+    border-radius: 2px;
+    background: rgb(50, 50, 50);
+    white-space: nowrap;
+    font-size: 1.6rem;
+    color: rgb(150, 200, 150);
+    text-shadow: 2px 2px rgb(40, 40, 40);
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
 }
 
 input {
-  height: 2rem;
-  width: 15rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-  border: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-align: center;
+    height: 2rem;
+    width: 15rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
 }
 
-  input::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
     text-align: center;
     font-size: 1.15rem;
-    color: rgb(180,180,180);
+    color: rgb(180, 180, 180);
     font-weight: normal;
-  }
-  input::-moz-placeholder {
+}
+
+input::-moz-placeholder {
     text-align: center;
     font-size: 1.15rem;
-    color: rgb(180,180,180);
+    color: rgb(180, 180, 180);
     font-weight: normal;
-  }
-  input:-ms-input-placeholder {
+}
+
+input:-ms-input-placeholder {
     text-align: center;
     font-size: 1.15rem;
-    color: rgb(180,180,180);
+    color: rgb(180, 180, 180);
     font-weight: normal;
-  }
-  input:-moz-placeholder {
+}
+
+input:-moz-placeholder {
     text-align: center;
     font-size: 1.15rem;
-    color: rgb(180,180,180);
+    color: rgb(180, 180, 180);
     font-weight: normal;
-  }
+}
 
 .button-submit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 7rem;
-  height: 3rem;
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  font-weight: normal;
-  white-space: pre-wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 3rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: normal;
+    white-space: pre-wrap;
 }
+
+
 
 
 
 /*CHAT*/
 
+
 /*Icons logout & connected users*/
+
 .icons {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
+
 .icon {
-  margin-bottom: .5rem; 
-  padding: .5rem;
-  border-radius: 3px;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    border-radius: 3px;
 }
+
 .iconUserConnect {
     position: relative;
 }
+
 .iconUserConnect:active,
 .iconUserConnect:hover {
-  background-color: rgb(150, 200, 150);
+    background-color: rgb(150, 200, 150);
 }
 
 .iconUserConnect:hover .numberUsersConnected,
 .iconUserConnect:focus .numberUsersConnected,
 .iconUserConnect:active .numberUsersConnected {
-  color: white;
-}
-.iconlogout:hover {
-  background-color: rgb(200, 150, 150);
-  padding: .5rem;
+    color: white;
 }
 
+.iconlogout:hover {
+    background-color: rgb(200, 150, 150);
+    padding: .5rem;
+}
 
 .numberUsersConnected {
-  text-shadow: 1px 1px  #383838;
-  font-size: 2.25rem;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 44;
-  color:rgb(150, 200, 150);
+    text-shadow: 1px 1px #383838;
+    font-size: 2.25rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 44;
+    color: rgb(150, 200, 150);
 }
 
 .connectedUsersDiv {
-  position: relative;
-  left: 0;
-  top: 0;
-  width: 50%;
-  height: auto;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color:rgba(50, 50, 52, 1);
-  color: grey;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: auto;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgba(50, 50, 52, 1);
+    color: grey;
 }
 
-
-
 .usersConnectedList {
-  padding-left: .5rem;
+    padding-left: .5rem;
 }
 
 .userConnected {
-  color:rgb(150, 200, 150);
-  list-style: none;
-  margin: .5rem 0;
+    color: rgb(150, 200, 150);
+    list-style: none;
+    margin: .5rem 0;
 }
-/*Fin section connecion*/
 
-.chat {
-  max-width: 100%;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 3px;
-  background-color: grey;
-  color: black;
-}
+
+
+/*End section connection*/
 
 .windowChat {
-  height: 50vh;
-  overflow: auto;
-  max-width: 100%;
-  border-radius: 2px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    max-height: 50vh;
+    height: 50vh;
+    overflow: auto;
+    max-width: 100%;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat:before {
+    position: absolute;
+    font-family: FontAwesome;
+    z-index: 10;
+    font-size: 20rem;
+    content: "\f086";
+    color: rgba(150, 200, 150, .7);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chat:after {
+    position: absolute;
+    content: "";
+    z-index: 15;
+    color: rgba(0, 0, 0, .8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+}
+
+.chat {
+    z-index: 30;
+    position: relative;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    background-color: rgba(200, 200, 200, .5);
+    color: black;
 }
 
 .messages {
-  list-style: none;
-  overflow-wrap: break-word;
-  height: auto; /*prevent Safari problem*/
+    z-index: 30;
+    list-style: none;
+    overflow-wrap: break-word;
+    height: auto;
+    /*prevent Safari problem*/
 }
 
 .message {
-  margin: .5rem 0;
+    margin: .5rem 0;
 }
 
 .user-name,
 .user-message {
-  font-size: 1.25rem;
-  font-weight: bold;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
+
 .date {
- color: #424242;
+    color: rgb(54, 53, 56);
 }
+
 .user-name {
-  color: rgb(150, 200, 150); 
+    color: rgb(150, 200, 150);
 }
 
 .user-message {
-  color: black;
+    color: black;
 }
 
 .formPostMessage {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
+
 .fieldPostMessage {
-  width: 80%;
-  margin-right: .5rem;
+    width: 80%;
+    margin-right: .5rem;
 }
-.sendMessageButton {
-}
+
+.sendMessageButton {}
+
+
 
 /*RESPONSIVE*/
 
-@media screen and (min-width: 768px)  {
-  body,
-  html {
-  font-size: 16px;
-  }
-  .main {
-  margin:2rem 0 ;
-  width: 90%;
-  height: auto;
-  }
-  .forms {
-    margin-top: 2rem;
-  }
-  .form {
-    width: 40%;
-    margin: 2rem 0;
-  }
-  .chat {
-    width: 50%;
-  }
-  .windowChat {
-    width: 100%;
-  }
-@media screen and (min-width: 1024px) {
-  
-  }
-
+@media screen and (min-width: 768px) {
+    body,
+    html {
+        font-size: 16px;
+    }
+    .main {
+        margin: 2rem 0;
+        width: 90%;
+        height: auto;
+    }
+    .forms {
+        margin-top: 2rem;
+    }
+    .form {
+        width: 40%;
+        margin: 2rem 0;
+    }
+    .chat {
+        width: 50%;
+    }
+    .windowChat {
+        width: 100%;
+    }
 }

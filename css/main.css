@@ -269,11 +269,11 @@ input {
 
 .formPostMessage {
   display: flex;
-  margin:  1rem 0;
+  justify-content: space-between;
 }
 .fieldPostMessage {
   width: 80%;
-  margin: 0 .5rem;
+  margin-right: .5rem;
 }
 .sendMessageButton {
 }

@@ -1,14 +1,24 @@
-<ul class="messages">
-	<li ng-repeat="message in chat.listMessages">
-		<span class="user-name">{{message.user_name}}</span> : <span class="user-message">{{message.content}}</span>
-		<br>
- 		<span class="date">{{message.date}}</span>
-	</li>
-</ul>
 
-<!-- <div class="">
-	<form ng-submit="" id="">
-		<input type="text" class="" ng-model="" placeholder="Enter your message">
-		<input class="btn send" type="submit"></input>
-	</form>
-</div> -->
+<div class="icons">
+<a class="icon iconUserConnect" ng-click="isVisibleConnectedUserDiv = !isVisibleConnectedUserDiv"><i class="fa fa-users fa-2x" aria-hidden="true"><span class="numberUsersConnected">{{chat.usersConnectedList.length}}</span></i></a>
+<a ng-click="chat.logout()" class="icon fa-2x iconlogout"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+</div>
+
+<div class="connectedUsersDiv" ng-show="isVisibleConnectedUserDiv">
+	<h3> Users connected :</h3>
+	<ul class="usersConnectedList">
+		<li ng-repeat="(key, val) in chat.usersConnectedList" class="userConnected">{{val}}</li>
+	</ul>
+</div>
+
+<section class="windowChat" scroll-glue-bottom="glued">
+	<div class="messages" ng-repeat="message in chat.listMessages">
+			<p class="message"><span class="user-name">{{message.user_name}}</span> : 
+			<span class="user-message">{{message.content}}</span><!-- <span class="date">{{message.timestamp}}</span> -->
+			</p>
+	</div>
+<form ng-submit="chat.post()" name="formPostMessage" class="formPostMessage">
+	<input type="text" class="fieldPostMessage" ng-model="chat.postMessage" placeholder="Enter your message">
+	<input class="sendMessageButton" value ="send" type="submit"></input>
+</form>
+</section>

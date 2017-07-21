@@ -11,14 +11,14 @@
 	</ul>
 </div>
 
-<section class="windowChat" scroll-glue-bottom="glued">
+<section class="windowChat" scroll-glue>
 	<div class="messages" ng-repeat="message in chat.listMessages">
 			<p class="message"><span class="user-name">{{message.user_name}}</span> : 
 			<span class="user-message">{{message.content}}</span><!-- <span class="date">{{message.timestamp}}</span> -->
 			</p>
 	</div>
+</section>
 <form ng-submit="chat.post()" name="formPostMessage" class="formPostMessage">
 	<input type="text" class="fieldPostMessage" ng-model="chat.postMessage" placeholder="Enter your message">
 	<input class="sendMessageButton" value ="send" type="submit"></input>
 </form>
-</section>

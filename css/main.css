@@ -208,7 +208,7 @@ input {
   padding: 1rem;
   margin-bottom: 1rem;
   background-color:rgba(50, 50, 52, 1);
-  color: pink;
+  color: grey;
 }
 
 
@@ -235,7 +235,7 @@ input {
 
 .windowChat {
   height: 50vh;
-  overflow-y: scroll;
+  overflow: auto;
   max-width: 100%;
   border-radius: 2px;
   position: relative;
@@ -269,13 +269,13 @@ input {
 
 .formPostMessage {
   display: flex;
+  margin:  1rem 0;
 }
 .fieldPostMessage {
   width: 80%;
-  margin: 1rem .5rem;
+  margin: 0 .5rem;
 }
 .sendMessageButton {
-  margin: 1rem 0;
 }
 
 /*RESPONSIVE*/

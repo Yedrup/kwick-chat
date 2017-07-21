@@ -258,7 +258,9 @@ input {
   font-size: 1.25rem;
   font-weight: bold;
 }
-
+.date {
+ color: #424242;
+}
 .user-name {
   color: rgb(150, 200, 150); 
 }

@@ -121,34 +121,42 @@
         }
     };
     //chat Controller
-    function chatCtrl(kwickService, $rootScope, $interval) {
+    function chatCtrl(kwickService, $rootScope, $interval, $scope) {
         var chat = this;
-        /* Scroll auto */
+        chat.usersConnectedList = {};        
+        chat.listMessages = {};
+        /* Glue on the bottom */
         chat.glued = true;
-
 
         //take all the messages from the chat feed 
         chat.getAllMessages = function() {
-                chat.listMessages = {};
                 kwickService
                     .allMessages($rootScope.user.token)
                     .then(function(dataAllMessages) {
-                        chat.listMessages = dataAllMessages.talk;
-                        $rootScope.dataWatched.messagesChatFeed = chat.listMessages;
-                        $rootScope.dataWatched.messagesChatFeedCount = chat.listMessages.length;
-                        console.log(chat.listMessages);
+                      if ($rootScope.dataWatched.messagesChatFeedCount == dataAllMessages.talk.length) {
+                          return false;
+                        } else {
+                            chat.listMessages = dataAllMessages.talk;
+                            $rootScope.dataWatched.messagesChatFeedCount = chat.listMessages.length;
+                            console.log(chat.listMessages);
+                        }
                     });
             }
             //Function get the names and number of users online   
         chat.getUsersOnline = function() {
-                chat.usersConnectedList = {};
                 kwickService
                     .usersOnline($rootScope.user.token)
                     .then(function(dataUsersOnline) {
-                        chat.usersConnectedList = dataUsersOnline.user;
-                        $rootScope.dataWatched.usersOnline = chat.usersConnectedList;
-                        $rootScope.dataWatched.usersOnlineCount = chat.usersConnectedList.length;
-                        console.log(chat.usersConnectedList.length);
+                        if ($rootScope.dataWatched.usersOnlineCount == dataUsersOnline.user.length) {
+                            return false;
+                        } else {
+                            chat.usersConnectedList = dataUsersOnline.user;
+                            $rootScope.dataWatched.usersOnlineCount = chat.usersConnectedList.length;
+                            $rootScope.dataWatched.usersOnline = chat.usersConnectedList;
+                            $rootScope.dataWatched.usersOnlineCount = chat.usersConnectedList.length;
+                            console.log(chat.usersConnectedList.length);
+                        }
+
                     });
             }
             //Function post message
@@ -161,12 +169,12 @@
                     });
             }
             //Function log out
-        chat.logout = function() {
+        chat.logout = function($interval) {
             kwickService
                 .postMessage($rootScope.user.token, $rootScope.user.id)
                 .then(function(userDisconnection) {
                     $rootScope.isUserConnected = false;
-
+                    // $interval.cancel(intervalChat);
                     console.log("you've been disconnected");
                 });
         }
@@ -174,15 +182,23 @@
         chat.updateChat = function() {
             chat.getUsersOnline();
             chat.getAllMessages();
-        }
+        };
 
-        // //stop the interval
-        // if ($rootScope.isUserConnected) {
-        //     $interval(chat.updateChat, 2000);
-        // } else if ($rootScope.isUserConnected = false) {
-        //     $interval.cancel(chat.updateChat, 2000)
-        // }
-        chat.updateChat();
+        // var intervalChat = $interval(function() {
+        //     if ($rootScope.isUserConnected) {
+        //         chat.updateChat();
+        //     }
+        // }, 2000);
+        $scope.$watch(function(rootScope) {
+                return rootScope.dataWatched;
+            },
+            function(newValue, oldValue) {
+                if (newValue = true) {
+                    $rootScope.interval = $interval(chat.updateChat, 1000);
+                }
+            });
+
+
     }
 
 

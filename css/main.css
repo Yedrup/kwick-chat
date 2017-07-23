@@ -65,8 +65,6 @@ body {
 }
 
 
-
-
 /*FORMS*/
 
 .forms {
@@ -165,9 +163,6 @@ input:-moz-placeholder {
 }
 
 
-
-
-
 /*CHAT*/
 
 
@@ -255,7 +250,8 @@ input:-moz-placeholder {
 .chat:before {
     position: absolute;
     font-family: FontAwesome;
-    z-index: 10;
+    z-index: -1;
+    overflow: hidden;
     font-size: 20rem;
     content: "\f086";
     color: rgba(150, 200, 150, .7);

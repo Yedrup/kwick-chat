@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-  "angular": "^1.6.4"
+  "angular": "^1.6.4",
+  "angularjs-scroll-glue": "^2.1.0"
   },
   "devDependencies": {},
   "scripts": {

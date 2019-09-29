@@ -10,6 +10,7 @@
     });
     app.run(function($rootScope) {
         $rootScope.isUserConnected = false;
+        $rootScope.displayErrorMessage = null;
         $rootScope.user = {
             id: null,
             token: null,
@@ -64,6 +65,13 @@
             postMessage: function(token, user_id, message) {
                 return $http
                     .jsonp('http://greenvelvet.alwaysdata.net/kwick/api/say/' + token + '/' + user_id + '/' + message)
+                    .then(function(response) {
+                        return response.data.result;
+                    })
+            },
+            logout: function(token, user_id, message) {
+                return $http
+                    .jsonp('http://greenvelvet.alwaysdata.net/kwick/api/logout/' + token + '/' + user_id)
                     .then(function(response) {
                         return response.data.result;
                     })

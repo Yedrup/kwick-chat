@@ -323,7 +323,9 @@ input:-moz-placeholder {
     margin-right: .5rem;
 }
 
-.sendMessageButton {}
+.errorMessage {
+    color:#cd3d3d;
+}
 
 
 

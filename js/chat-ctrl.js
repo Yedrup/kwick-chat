@@ -7,65 +7,89 @@ function chatCtrl(kwickService, $rootScope, $interval, $scope) {
     chat.glued = true;
 
     //take all the messages from the chat feed 
-    chat.getAllMessages = function() {
+    chat.getAllMessages = function () {
         kwickService
             .allMessages($rootScope.user.token)
-            .then(function(dataAllMessages) {
-                if ($rootScope.dataWatched.messagesChatFeedCount == dataAllMessages.talk.length) {
-                    return false;
-                } else {
-                    chat.listMessages = dataAllMessages.talk;
-                    $rootScope.dataWatched.messagesChatFeedCount = chat.listMessages.length;
-                    console.log(chat.listMessages);
+            .then(function (dataAllMessages) {
+                if (dataAllMessages && dataAllMessages.talk) {
+                    if ($rootScope.dataWatched.messagesChatFeedCount == dataAllMessages.talk.length) {
+                        return false;
+                    } else {
+                        chat.listMessages = dataAllMessages.talk;
+                        $rootScope.dataWatched.messagesChatFeedCount = chat.listMessages.length;
+                    }
                 }
+            }).catch(function (error) {
+                console.error('error ==>', error);
             });
     }
     //Function get the names and count of users online   
-    chat.getUsersOnline = function() {
+    chat.getUsersOnline = function () {
         kwickService
             .usersOnline($rootScope.user.token)
-            .then(function(dataUsersOnline) {
-                if ($rootScope.dataWatched.usersOnlineCount == dataUsersOnline.user.length) {
-                    return false;
-                } else {
-                    chat.usersConnectedList = dataUsersOnline.user;
-                    $rootScope.dataWatched.usersOnlineCount = chat.usersConnectedList.length;
-                    $rootScope.dataWatched.usersOnline = chat.usersConnectedList;
-                    $rootScope.dataWatched.usersOnlineCount = chat.usersConnectedList.length;
-                    console.log(chat.usersConnectedList.length);
+            .then(function (dataUsersOnline) {
+                if (dataUsersOnline && dataUsersOnline.user) {
+                    if (($rootScope.dataWatched.usersOnlineCount == dataUsersOnline.user.length)) {
+                        return false;
+                    } else {
+                        chat.usersConnectedList = dataUsersOnline.user;
+                        $rootScope.dataWatched.usersOnlineCount = chat.usersConnectedList.length;
+                        $rootScope.dataWatched.usersOnline = chat.usersConnectedList;
+                        $rootScope.dataWatched.usersOnlineCount = chat.usersConnectedList.length;
+                    }
                 }
-
+            })
+            .catch(function (error) {
+                console.error('error ==>', error);
             });
     }
     //Function post message
-    chat.post = function() {
+    chat.post = function () {
         kwickService
             .postMessage($rootScope.user.token, $rootScope.user.id, chat.postMessage)
-            .then(function() {
-                console.log("you've post a message");
+            .then(function () {
                 chat.postMessage = "";
+            }).catch(function (error) {
+                console.error('error ==>', error);
             });
     }
     //Function log out
-    chat.logout = function() {
-        $rootScope.isUserConnected = false;
+    chat.logout = function () {
         kwickService
-            .postMessage($rootScope.user.token, $rootScope.user.id)
-            .then(function(userDisconnection) {
-                console.log("you've been disconnected");
+            .logout($rootScope.user.token, $rootScope.user.id)
+            .then(function (userDisconnection) {
+                $rootScope.isUserConnected = false;
+                $rootScope.displayErrorMessage = null;
+                $rootScope.user = {
+                    id: null,
+                    token: null,
+                    name: null,
+                    messageSent: null,
+                };
+                $rootScope.dataWatched = {
+                    usersOnline: null,
+                    usersOnlineCount: null,
+                    messagesChatFeedCount: null,
+                }
+                var unregister = $scope.$watch('rootScope', function () {
+                    // Do something interesting here ...
+                    unregister();
+                });
+            }).catch(function (error) {
+                console.error('error ==>', error);
             });
     }
 
-    chat.updateChat = function() {
+    chat.updateChat = function () {
         chat.getUsersOnline();
         chat.getAllMessages();
     };
 
 
-    $scope.$watch(function(rootScope) {
+    $scope.$watch(function (rootScope) {
             return rootScope.dataWatched;
         },
-        function(newValue, oldValue) {
+        function (newValue, oldValue) {
             if (newValue = true) {
                 $rootScope.interval = $interval(chat.updateChat, 1000);
             }

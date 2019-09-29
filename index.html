@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta description="Kwick is the easy way to chat with your classmates!">
     <title>Kwick!</title>
     <link rel="stylesheet" href="css/normalize.css">
@@ -16,6 +17,7 @@
     <main class="main">
         <h2 class="title">Kwick chat!</h2>
         <p class="presentation" ng-hide="isUserConnected">Kwick is the easy way to chat with all your classmates!</p>
+        <p ng-if="isplayErrorMessage !== null" class="errorMessage">{{displayErrorMessage}}</p>
         <connection-forms class="forms" ng-if="!isUserConnected"></connection-forms>
         <chat-feed class="chat" ng-if="isUserConnected"></chat-feed>
     </main>

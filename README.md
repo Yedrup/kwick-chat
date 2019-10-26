@@ -15,4 +15,4 @@ It's an AngularJS based application on which the user can register a pseudo and 
 Then he can read the messages and send his own messages.
 
 
-
+live version here : https://purdeychambraud.com/Kwick-Chat/index.html
